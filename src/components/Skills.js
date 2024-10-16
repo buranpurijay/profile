@@ -1,32 +1,25 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { LinearProgress } from "@mui/material";
-import "./Skills.css"; // Custom styles for Skills section
+import React from 'react';
+import { Container, Typography, Box, LinearProgress } from '@mui/material';
+
+const skills = [
+  { name: "JavaScript", level: 90 },
+  { name: "React", level: 95 },
+  { name: "AWS", level: 85 },
+];
 
 const Skills = () => {
-  const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 95 },
-    { name: "AWS", level: 85 },
-  ];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      className="skills"
-    >
-      <h2>Skills</h2>
-      <div className="skills-container">
-        {skills.map((skill, index) => (
-          <div key={index} className="skill">
-            <p>{skill.name}</p>
-            <LinearProgress variant="determinate" value={skill.level} />
-          </div>
-        ))}
-      </div>
-    </motion.div>
+    <Container>
+      <Typography variant="h3" gutterBottom>
+        Skills
+      </Typography>
+      {skills.map((skill, index) => (
+        <Box key={index} mb={3}>
+          <Typography variant="h6">{skill.name}</Typography>
+          <LinearProgress variant="determinate" value={skill.level} />
+        </Box>
+      ))}
+    </Container>
   );
 };
 

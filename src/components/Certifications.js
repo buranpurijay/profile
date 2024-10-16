@@ -1,26 +1,24 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "./Certifications.css"; // Custom styles for Certifications section
+import React from 'react';
+import { Container, Typography, List, ListItem } from '@mui/material';
 
 const Certifications = () => {
   const certifications = [
-    "React - The Complete Guide (incl. React Router & Redux)",
+    "React - The Complete Guide (incl. React Router & Redux)"
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      className="certifications"
-    >
-      <h2>Certifications</h2>
-      <ul>
+    <Container>
+      <Typography variant="h3" gutterBottom>
+        Certifications
+      </Typography>
+      <List>
         {certifications.map((cert, index) => (
-          <li key={index}>{cert}</li>
+          <ListItem key={index}>
+            <Typography variant="body1">{cert}</Typography>
+          </ListItem>
         ))}
-      </ul>
-    </motion.div>
+      </List>
+    </Container>
   );
 };
 

@@ -1,22 +1,19 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "./About.css"; // Custom styles for About section
+import React from 'react';
+import { Container, Typography, Box } from '@mui/material';
 
 const About = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      className="about"
-    >
-      <h2>About Me</h2>
-      <p>
-        I am a passionate Lead UI Developer with experience in cloud-native
-        solutions, React, AWS, and serverless architecture. I focus on creating
-        scalable, impactful solutions for businesses.
-      </p>
-    </motion.div>
+    <Container>
+      <Box mt={5}>
+        <Typography variant="h3" gutterBottom>
+          About Me
+        </Typography>
+        <Typography variant="body1" paragraph>
+          I am a passionate Lead UI Developer with expertise in cloud-native solutions using React, AWS, and Java.
+          I specialize in building scalable, impactful applications that drive business growth and customer satisfaction.
+        </Typography>
+      </Box>
+    </Container>
   );
 };
 

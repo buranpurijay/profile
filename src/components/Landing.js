@@ -1,26 +1,31 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import "./Landing.css"; // Custom styles for landing
+import React from 'react';
+import { Container, Typography, Box, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
-    <div className="landing">
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="landing-content"
+    <Container>
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        height="100vh"
       >
-        <h1>Jay Buranpuri</h1>
-        <p>Lead UI Developer | React | AWS | Java</p>
-        <div className="landing-links">
-          <Link to="/about">About Me</Link>
-          <Link to="/experience">Experience</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-      </motion.div>
-    </div>
+        <Typography variant="h2">Jay Buranpuri</Typography>
+        <Typography variant="h5" color="textSecondary" paragraph>
+          Lead UI Developer | React | AWS | Java
+        </Typography>
+        <Box display="flex" justifyContent="center" mt={3}>
+          <Button component={Link} to="/about" variant="contained" color="primary" sx={{ mr: 2 }}>
+            About Me
+          </Button>
+          <Button component={Link} to="/experience" variant="outlined" color="primary">
+            Experience
+          </Button>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
